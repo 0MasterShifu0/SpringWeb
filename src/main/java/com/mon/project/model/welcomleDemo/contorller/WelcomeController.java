@@ -1,6 +1,8 @@
 package com.mon.project.model.welcomleDemo.contorller;
 
 import com.mon.project.model.welcomleDemo.vo.Welcome;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/welcome")
 public class WelcomeController {
-
+    private static final Logger logger = LoggerFactory.getLogger(WelcomeController.class);
     /**
      * hello.html页面并输入动态值
      * @return
@@ -58,5 +60,31 @@ public class WelcomeController {
         return w1;
     }
 
+    /**
+     * 返回json字符串
+     * @return
+     */
+    @RequestMapping("getWelcomeInfo")
+    @ResponseBody
+    public List<Welcome> getWelcomeInfo(){
+       //测试数据
+        List<Welcome> welcomes = new ArrayList<>();
+        Welcome w1 = new Welcome();
+        w1.setId(1L);
+        w1.setName("xx1");
+        w1.setAge(11);
+        w1.setGender("女");
+        Welcome w2 = new Welcome();
+        w2.setId(2L);
+        w2.setName("xx2");
+        w2.setAge(22);
+        w2.setGender("男");
+        welcomes.add(w1);
+        welcomes.add(w2);
+        logger.info(welcomes.toString());
+        logger.warn(welcomes.toString());
+        logger.error(welcomes.toString());
+        return welcomes;
+    }
 
 }
