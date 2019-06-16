@@ -7,6 +7,11 @@
         select 1 from dual
     </select>
 
+
+    <select id="findOperator" resultType="com.mon.project.model.welcomeDBDemo.vo.Operator">
+        select id,dates,equpment,operators from operator where id =1
+
+    </select>
    <!-- <insert id="insertArticle" parameterType="com.example.modules.JdbcTemplate.entity.Article" >
         INSERT INTO article
         (

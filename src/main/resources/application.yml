@@ -12,18 +12,21 @@ spring.thymeleaf.cache: false
 spring.thymeleaf.mode : LEGACYHTML5
 
 # 数据源、视图配置
-datasource:
-  name: oracle
-  continue-on-error: true
-  driver-class-name: com.oracle.jdbc.Driver
-  url: jdbc:oracle:thin:@localhost:1521:XE
-  username: system
-  password: 1234
-  #连接池的配置信息
-  initialSize: 10
-  minIdle: 10
-  maxActive: 100
-  maxWait: 60000
+
+spring:
+  datasource:
+    name: oracle
+    continue-on-error: true
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: system
+    password: 1234
+    ConnectionTestQuery: SELECT 1
+    #连接池的配置信息
+    initialSize: 10
+    minIdle: 10
+    maxActive: 100
+    maxWait: 60000
 
 # mybatis XML映射配置
 mybatis:
