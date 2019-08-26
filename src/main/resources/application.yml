@@ -11,6 +11,14 @@ spring.resources.static-locations: classpath:/static/
 spring.thymeleaf.cache: false
 spring.thymeleaf.mode : LEGACYHTML5
 
+# 如果是新建的Thymeleaf项目可以不需要配置,因为项目自带配置
+# .html访问配置
+#spring.hymeleaf:
+#    prefix: classpath:/templates/
+#    suffix: .html
+#    #页面热加载
+#    cache :  false
+
 # 数据源、视图配置
 
 spring:
